@@ -1,10 +1,11 @@
 (ns leiningen.ring.uberjar
-  (:use [leiningen.ring.util :only [ensure-handler-set! merge-profiles
-                                    unmerge-profiles]]
-        [leiningen.ring.server :only (add-server-dep)])
-  (:require [leiningen.ring.jar :as jar]
-            [leiningen.clean :as clean]
-            leiningen.uberjar))
+  (:require
+    [leiningen.ring
+     [jar :as jar]
+     [util :refer [ensure-handler-set! merge-profiles unmerge-profiles]]
+     [server :refer [add-server-dep]]]
+    [leiningen.clean :as clean]
+    leiningen.uberjar))
 
 (defn- assoc-profile [project profile-name key value]
   (let [profile (get-in project [:profiles profile-name])]

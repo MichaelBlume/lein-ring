@@ -1,11 +1,12 @@
 (ns leiningen.ring
-  (:use [leiningen.help :only (help-for subtask-help-for)]
-        [leiningen.ring.server :only (server)]
-        [leiningen.ring.server-headless :only (server-headless)]
-        [leiningen.ring.jar :only (jar)]
-        [leiningen.ring.uberjar :only (uberjar)]
-        [leiningen.ring.war :only (war)]
-        [leiningen.ring.uberwar :only (uberwar)]))
+  (:require
+    [leiningen.help :refer (help-for subtask-help-for)]
+    [leiningen.ring.server :refer (server)]
+    [leiningen.ring.server-headless :refer (server-headless)]
+    [leiningen.ring.jar :refer (jar)]
+    [leiningen.ring.uberjar :refer (uberjar)]
+    [leiningen.ring.war :refer (war)]
+    [leiningen.ring.uberwar :refer (uberwar)]))
 
 (defn- nary? [v n]
   (some #{n} (map count (:arglists (meta v)))))

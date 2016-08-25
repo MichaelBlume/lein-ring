@@ -1,9 +1,11 @@
 (ns leiningen.ring.server
-  (:require [leinjacker.deps :as deps]
-            [leiningen.core.classpath :as classpath]
-            [clojure.java.io :as io])
-  (:use [leinjacker.eval :only (eval-in-project)]
-        [leiningen.ring.util :only (ensure-handler-set! update-project)]))
+  (:require
+    [leinjacker.deps :as deps]
+    [leinjacker.eval :refer [eval-in-project]]
+    [leiningen.core.classpath :as classpath]
+    [leiningen.ring.util :refer [ensure-handler-set!
+                                 update-project]]
+    [clojure.java.io :as io]))
 
 (defn classpath-dirs
   "list of all dirs on the leiningen classpath"

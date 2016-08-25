@@ -1,8 +1,8 @@
 (ns leiningen.ring.util
-  (:use [leinjacker.eval :only (eval-in-project)])
   (:require [clojure.string :as str]
             [clojure.java.io :as io]
             [leiningen.deps]
+            [leinjacker.eval :refer [eval-in-project]]
             [leinjacker.utils :as lju]))
 
 (defn find-namespaces [var-syms]
